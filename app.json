@@ -62,6 +62,11 @@
             "required": true,
             "value": "true"
         },
+        "FULL_ALEXA": {
+            "description": "Turn your account into a chatbot! Replys To The Private chat messages by the Alexa Chatbot.",
+            "required": true,
+            "value": "true"
+        },
         "HANDLERS": {
             "description": "Komutlar için. For commands.",
             "required": true,
