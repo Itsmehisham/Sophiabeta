@@ -546,49 +546,39 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
             await conn.updatePresence(msg.key.remoteJid, Presence.unavailable);
         }
         // ==================== Greetings ====================
-        if (config.GIFORPP == 'pp' || config.GIFORPP == 'Pp' || config.GIFORPP == 'PP' || config.GIFORPP == 'pP' ) {
-    if (msg.messageStubType === 32 || msg.messageStubType === 28) {
+      if (msg.messageStubType === 32 || msg.messageStubType === 28) {
+
             // Görüşürüz Mesajı
+
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
+
+            var blogo = await axios.get(config.GIF_BYE, { responseType: 'arraybuffer' })
+
             if (gb !== false) {
-                let pp
-                try { pp = await conn.getProfilePicture(msg.messageStubParameters[0]); } catch { pp = await conn.getProfilePicture(); }
-                await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => {
-                await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {caption:  gb.message }); });
+
+                await conn.sendMessage(msg.key.remoteJid, Buffer.from(blogo.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message});
+
             }
+
             return;
+
         } else if (msg.messageStubType === 27 || msg.messageStubType === 31) {
+
             // Hoşgeldin Mesajı
+
             var gb = await getMessage(msg.key.remoteJid);
+
+            var wlogo = await axios.get(config.GIF_WEL, { responseType: 'arraybuffer' })
+
             if (gb !== false) {
-               let pp
-                try { pp = await conn.getProfilePicture(msg.messageStubParameters[0]); } catch { pp = await conn.getProfilePicture(); }
-                await axios.get(pp, {responseType: 'arraybuffer'}).then(async (res) => {
-                await conn.sendMessage(msg.key.remoteJid, res.data, MessageType.image, {caption:  gb.message }); });
+
+                await conn.sendMessage(msg.key.remoteJid, Buffer.from(wlogo.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message});
+
             }
+
             return;
+
         }
-    }
-    else if (config.GIFORPP == 'gif' || config.GIFORPP == 'Gif' || config.GIFORPP == 'GIF' || config.GIFORPP == 'GIf' ) {
-    if (msg.messageStubType === 32 || msg.messageStubType === 28) {
-            // Görüşürüz Mesajı
-            var gb = await getMessage(msg.key.remoteJid, 'goodbye');
-            if (gb !== false) {
-                var sewqueenimage = await axios.get(config.GIF_BYE, { responseType: 'arraybuffer' })
-                await conn.sendMessage(msg.key.remoteJid, Buffer.from(sewqueenimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message + '\n\nTo' + '@' + msg.messagestubparameters.jid.split('@')[0] + '❤︎', MessageType.text, {
-                quotedMessage: msg.messagestubparameters.data, contextInfo: {mentionedJid: [msg.messagestubparameters.jid.replace('c.us', 's.whatsapp.net')]}})
-            }
-            return;
-        } else if (msg.messageStubType === 27 || msg.messageStubType === 31) {
-            // Hoşgeldin Mesajı
-            var gb = await getMessage(msg.key.remoteJid);
-            if (gb !== false) {
-            var sewqueenimage = await axios.get(config.GIF_WEL, { responseType: 'arraybuffer' })
-            await conn.sendMessage(msg.key.remoteJid, Buffer.from(sewqueenimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message + '\n\nTo' + '@' + msg.messagestubparameters.jid.split('@')[0] + '❤︎', MessageType.text, {
-                quotedMessage: msg.messagestubparameters.data, contextInfo: {mentionedJid: [msg.messagestubparameters.jid.replace('c.us', 's.whatsapp.net')]}})            }
-            return;
-        }
-     }
         // ==================== End Greetings ====================
 
         // ==================== Blocked Chats ====================
