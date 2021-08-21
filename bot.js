@@ -575,7 +575,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
             if (gb !== false) {
                 var sewqueenimage = await axios.get(config.GIF_BYE, { responseType: 'arraybuffer' })
-                await conn.sendMessage(msg.key.remoteJid, Buffer.from(sewqueenimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message +'\n\n                 ᴘᴏᴡᴇʀᴅ ʙʏ Sophia '});
+                await conn.sendMessage(msg.key.remoteJid, Buffer.from(sewqueenimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message + '\n\nTo' + '@' + msg.messagestubparameters.jid.split('@')[0] + '❤︎', MessageType.text, {
+                quotedMessage: msg.messagestubparameters.data, contextInfo: {mentionedJid: [msg.messagestubparameters.jid.replace('c.us', 's.whatsapp.net')]}})
             }
             return;
         } else if (msg.messageStubType === 27 || msg.messageStubType === 31) {
@@ -583,8 +584,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
             var gb = await getMessage(msg.key.remoteJid);
             if (gb !== false) {
             var sewqueenimage = await axios.get(config.GIF_WEL, { responseType: 'arraybuffer' })
-            await conn.sendMessage(msg.key.remoteJid, Buffer.from(sewqueenimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message +'\n\n                 ᴘᴏᴡᴇʀᴅ ʙʏ Sophia'});
-            }
+            await conn.sendMessage(msg.key.remoteJid, Buffer.from(sewqueenimage.data), MessageType.video, {mimetype: Mimetype.gif, caption: gb.message + '\n\nTo' + '@' + msg.messagestubparameters.jid.split('@')[0] + '❤︎', MessageType.text, {
+                quotedMessage: msg.messagestubparameters.data, contextInfo: {mentionedJid: [msg.messagestubparameters.jid.replace('c.us', 's.whatsapp.net')]}})            }
             return;
         }
      }
@@ -946,7 +947,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please Wait.')}`);
                                     );
                                 }
                                 else {
-                                    return await conn.sendMessage(conn.user.jid, '*🙇🏻 Sorry, I Couldnt Read This Error! 🙇🏻*' +
+                                    return await conn.sendMessage(conn.user.jid, '*🙇🏻Sorry, I Couldnt Read This Error! 🙇🏻*' +
                                         '\n_You can write to our support group for more help._'
                                         , MessageType.text
                                     );
