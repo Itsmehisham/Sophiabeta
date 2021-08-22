@@ -15,7 +15,7 @@ const {MessageType, GroupSettingChange} = require('@adiwajshing/baileys');
 const Config = require('../config');
 const SEW = "only command you can type"
 const QUEEN = "control disappering mode"
-const Ravi = "*😈HUNTED BY  DARK QUEEN😈*"
+const Ravi = "*😈HUNTED BY  Ichu😈*"
 const Mano = "*disappering mode Sucsessfuly Turned off*"
 
 async function checkImAdmin(message, user = message.client.user.jid) {
