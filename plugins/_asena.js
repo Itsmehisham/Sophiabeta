@@ -8,7 +8,7 @@ WhatsAsena - Yusuf Usta
 const Asena = require('../events');
 const Config = require('../config');
 const {MessageType} = require('@adiwajshing/baileys');
-
+const fs = require("fs")
 const Language = require('../language');
 const Lang = Language.getString('_asena');
 
