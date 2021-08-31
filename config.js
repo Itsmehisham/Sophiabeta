@@ -38,6 +38,7 @@ module.exports = {
     THERI_KICK: process.env.THERI_KICK === undefined ? 'true' : process.env.THERI_KICK,
     DISBGM: process.env.DISABLE_JID_BGM_FILTER === undefined ? false : process.env.DISABLE_JID_BGM_FILTER,
     NOLOG: process.env.NO_LOG === undefined ? 'false' : process.env.NO_LOG,
+    INBO: process.env.INBO_BLOCK === undefined ? 'true' : process.env.INBO_BLOCK,
     CAPTION_KEY: process.env.CAPTION_KEY === undefined ?'Made by SOPHIA' : process.env.CAPTION_KEY,
     FULLALEXA: process.env.FULL_ALEXA === undefined ? 'true' : process.env.FULL_ALEXA,
     FULLEVA: process.env.FULL_EVA === undefined ? 'false' : process.env.FULL_EVA,
