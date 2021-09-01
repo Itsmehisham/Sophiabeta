@@ -52,6 +52,7 @@
     "jimp": "0.16.0",
     "js-ffmpeg": "0.0.26",
     "jsdom": "^16.5.1",
+    "textmaker-thiccy": "^1.2.5",
     "langs": "^2.0.0",
     "languagedetect": "^2.0.0",
     "meme-maker": "^2.1.2",
