@@ -36,7 +36,7 @@ module.exports = {
     MUTEMSG: process.env.MUTE_MESSAGE === undefined ? 'default' : process.env.MUTE_MESSAGE,
     BGMFILTER: process.env.BGM_FILTER === undefined ? false : convertToBool(process.env.BGM_FILTER),
     THERI_KICK: process.env.THERI_KICK === undefined ? 'true' : process.env.THERI_KICK,
-    BADWORD: process.env.BAD_BLOCK === undefined ? 'true' : process.env.BAD_BLOCK,
+    BADBLOCK: process.env.BAD_BLOCK === undefined ? 'true' : process.env.BAD_BLOCK,
     DISBGM: process.env.DISABLE_JID_BGM_FILTER === undefined ? false : process.env.DISABLE_JID_BGM_FILTER,
     NOLOG: process.env.NO_LOG === undefined ? 'false' : process.env.NO_LOG,
     INBO: process.env.INBO_BLOCK === undefined ? 'true' : process.env.INBO_BLOCK,
