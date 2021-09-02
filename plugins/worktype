@@ -34,7 +34,7 @@ let baseURI = '/apps/' + config.HEROKU.APP_NAME;
         alr_on = 'Antilink is already open!'
         alr_off = 'Antilink is currently closed!'
        work_private  = 'sophia bot private aayi😊'
-        work_public = 'sophia bot public aayi'
+       work_public = 'sophia bot public aayi'
     }
     if (config.LANG == 'AZ') {
         l_dsc = 'Antilink alətini aktivləşdirir.'
