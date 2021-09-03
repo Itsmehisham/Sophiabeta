@@ -43,4 +43,4 @@ Hisham.addCommand({pattern: 'bitunit ?(.*)', fromMe: wk, desc: bit, usage: 'bitu
   var formatter = auth_messages.success.replace('{number}', splitted_text[0]).replace('{unit1}', splitted_text[1]).replace('{unit2}', splitted_text[2]).replace('{result}', string_result)
   await message.client.sendMessage(message.jid, formatter, MessageType.text, { quoted: message.data })
 }));
-}
+
