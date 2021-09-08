@@ -34,6 +34,7 @@ module.exports = {
     ADDMSG: process.env.ADD_MESSAGE === undefined ? 'default' : process.env.ADD_MESSAGE,
     PLK: process.env.OWNER_NAME === undefined ? 'default' : process.env.OWNER_NAME,
     MUTEMSG: process.env.MUTE_MESSAGE === undefined ? 'default' : process.env.MUTE_MESSAGE,
+    PANEL_EMOJI: process.env.HELP_EMOJI === undefined ? '📘/📖' : process.env.HELP_EMOJI,
     BGMFILTER: process.env.BGM_FILTER === undefined ? false : convertToBool(process.env.BGM_FILTER),
     THERI_KICK: process.env.THERI_KICK === undefined ? 'true' : process.env.THERI_KICK,
     BADBLOCK: process.env.BAD_BLOCK === undefined ? 'true' : process.env.BAD_BLOCK,
