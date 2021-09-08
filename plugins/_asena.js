@@ -47,7 +47,7 @@ if (Config.WORKTYPE == 'private') {
                         CMD_HELP += comEmoji + Lang.COMMAND + ':* ```' + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '```\n' + '*🎁 ' + Lang.EXAMPLE + ':* ```' + command.usage + '```\n\n';
                     }
                     if (!command.desc == '' && command.usage == '' && command.warn == '') {
-                        CMD_HELP += comEmoji+ Lang.COMMAND + ':* ```' + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '```\n' = descEmoji+ Lang.DESC + ':* ```' + command.desc + '``` \n\n';
+                        CMD_HELP += comEmoji + Lang.COMMAND + ':* ```' + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '```\n' = descEmoji+ Lang.DESC + ':* ```' + command.desc + '``` \n\n';
                     }
                     if (command.desc == '' && command.usage == '' && !command.warn == '') {
                         CMD_HELP += comEmoji + Lang.COMMAND + ':* ```' + (match.length >= 3 ? (HANDLER + mmatch) : command.pattern) + '```\n' + '*🎱 ' + Lang.WARN + ':* ```' + command.warn + '```\n\n'
